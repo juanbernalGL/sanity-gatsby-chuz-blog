@@ -7,6 +7,7 @@ import {
 } from "../lib/helpers";
 import BlogPostPreviewList from "../components/blog-post-preview-list";
 import Container from "../components/container";
+import FilterButton from "../components/FilterButton";
 import GraphQLErrorList from "../components/graphql-error-list";
 import SEO from "../components/seo";
 import Layout from "../containers/layout";
@@ -97,8 +98,18 @@ const IndexPage = (props) => {
         keywords={site.keywords}
       />
       <Container>
-        <h1>Welcome to: {site.title}</h1>
-        <h1>subtitle to: {site.subtitle}</h1>
+        <h2 className="mt-10 text-error text-4xl">{site.title}</h2>
+        {/* <h1>subtitle to: {site.subtitle}</h1> */}
+        {/* <h1 className="text-4xl bg-red-800">Congratulations</h1> */}
+        <div className="flex mt-10 my-6 items-center w-8/12 justify-between">
+          <p className="font-merri text-sm">Filters</p>
+          {site.keywords &&
+            site.keywords.map((item, index) => (
+              <FilterButton key={item} label={item} index={index} />
+            ))}
+        </div>
+        {/* <p className="mt-10 ml-6 font-barlow">Filters barlow</p>
+        <p className="mt-10 ml-6 font-abril">Filters abril</p> */}
         {postNodes && (
           <BlogPostPreviewList
             title="Latest blog posts"

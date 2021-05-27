@@ -31,6 +31,11 @@ export default {
       },
     },
     {
+      name: "filters",
+      type: "filters",
+      title: "Filters",
+    },
+    {
       name: "author",
       type: "reference",
       description: "Publish an author and set a reference to them here.",
