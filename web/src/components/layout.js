@@ -3,7 +3,8 @@ import Header from "./header";
 
 import "../styles/layout.css";
 // import * as styles from "./layout.module.css";
-
+import Banner from "../components/Banner";
+import Navbar from "../components/Navbar";
 import ZeroanimaLogo from "../assets/svg/Zeroanima_Logo_red.svg";
 import ZeroanimaLogoSecondary from "../assets/images/Zeroanima_Logo_white_small.png";
 import Designed from "../assets/svg/Designed.svg";
@@ -17,6 +18,8 @@ const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle }) => (
       showNav={showNav}
     />
     <div className="w-8/12 lg:10/12 flex flex-col">
+      <Navbar />
+      <Banner />
       <div>{children}</div>
     </div>
     {/* <footer className={styles.footer}>
