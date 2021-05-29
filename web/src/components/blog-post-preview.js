@@ -27,9 +27,13 @@ function BlogPostPreview(props) {
           />
         )}
       </div> */}
-      <div className={styles.text}>
-        <h3 className={cn(responsiveTitle3, styles.title)}>{props.title}</h3>
-        {/* {JSON.stringify(props)} */}
+      <div className="ml-20">
+        <h3 className="font-barlow text-error font-semibold text-lg">
+          {props.title}
+        </h3>
+        <h3 className=" font-barlow font-normal text-sm text-primary">
+          {props.subtitle}
+        </h3>
         {/* {props._rawExcerpt && (
           <div className={styles.excerpt}>
             <PortableText blocks={props._rawExcerpt} />

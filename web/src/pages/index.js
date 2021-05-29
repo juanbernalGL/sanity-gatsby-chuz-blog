@@ -56,6 +56,7 @@ export const query = graphql`
             alt
           }
           title
+          subtitle
           _rawExcerpt
           slug {
             current
@@ -110,7 +111,7 @@ const IndexPage = (props) => {
         </div>
         {/* <p className="mt-10 ml-6 font-barlow">Filters barlow</p>
         <p className="mt-10 ml-6 font-abril">Filters abril</p> */}
-        {JSON.stringify(postNodes)}
+        {/* {JSON.stringify(postNodes)} */}
         {postNodes && (
           <BlogPostPreviewList
             title="Latest blog posts"
