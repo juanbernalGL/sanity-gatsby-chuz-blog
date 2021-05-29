@@ -29,13 +29,13 @@ function BlogPostPreview(props) {
       </div> */}
       <div className={styles.text}>
         <h3 className={cn(responsiveTitle3, styles.title)}>{props.title}</h3>
-        <h4>{props.subtitle}</h4>
+        {/* {JSON.stringify(props)} */}
         {/* {props._rawExcerpt && (
           <div className={styles.excerpt}>
             <PortableText blocks={props._rawExcerpt} />
           </div>
-        )} */}
-        {/* <div className={styles.date}>
+        )}
+        <div className={styles.date}>
           {format(new Date(props.publishedAt), "MMMM Mo, yyyy")}
         </div> */}
       </div>
