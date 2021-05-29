@@ -98,7 +98,7 @@ const IndexPage = (props) => {
         keywords={site.keywords}
       />
       <Container>
-        <h2 className="mt-10 text-error text-4xl">{site.title}</h2>
+        {/* <h2 className="mt-10 text-error text-4xl">{site.title}</h2> */}
         {/* <h1>subtitle to: {site.subtitle}</h1> */}
         {/* <h1 className="text-4xl bg-red-800">Congratulations</h1> */}
         <div className="flex mt-10 my-6 items-center w-8/12 justify-between">

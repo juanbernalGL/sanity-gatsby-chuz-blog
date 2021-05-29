@@ -6,7 +6,7 @@ import React from "react";
 function BlogPostPreviewGrid(props) {
   return (
     <div className={styles.root}>
-      {props.title && <h2 className={styles.headline}>{props.title}</h2>}
+      {/* {props.title && <h2 className={styles.headline}>{props.title}</h2>} */}
       <ul className={styles.grid}>
         {props.nodes &&
           props.nodes.map((node) => (
@@ -14,6 +14,7 @@ function BlogPostPreviewGrid(props) {
               <BlogPostPreview {...node} isInList />
             </li>
           ))}
+        {/* <li>{props.subtitle}</li> */}
       </ul>
       {props.browseMoreHref && (
         <div className={styles.browseMoreNav}>
