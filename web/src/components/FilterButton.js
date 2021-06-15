@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react'
 
 const FilterButton = ({ label, index }) => {
-  const fillStyle = index < 2 ? "bg-primary text-white" : "text-primary";
+  const fillStyle = index < 2 ? 'bg-primary text-white' : 'text-primary'
 
   return (
     <button
@@ -9,7 +9,7 @@ const FilterButton = ({ label, index }) => {
     >
       {label}
     </button>
-  );
-};
+  )
+}
 
-export default FilterButton;
+export default FilterButton

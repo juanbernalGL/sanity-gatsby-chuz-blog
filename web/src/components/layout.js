@@ -1,13 +1,13 @@
-import React from "react";
-import Header from "./header";
+import React from 'react'
+import Header from './header'
 
-import "../styles/layout.css";
+import '../styles/layout.css'
 // import * as styles from "./layout.module.css";
-import Banner from "../components/Banner";
-import Navbar from "../components/Navbar";
-import ZeroanimaLogo from "../assets/svg/Zeroanima_Logo_red.svg";
-import ZeroanimaLogoSecondary from "../assets/images/Zeroanima_Logo_white_small.png";
-import Designed from "../assets/svg/Designed.svg";
+import Banner from '../components/Banner'
+import Navbar from '../components/Navbar'
+import ZeroanimaLogo from '../assets/svg/Zeroanima_Logo_red.svg'
+import ZeroanimaLogoSecondary from '../assets/images/Zeroanima_Logo_white_small.png'
+import Designed from '../assets/svg/Designed.svg'
 
 const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle }) => (
   <div className="min-h-screen min-w-min bg-white bg-hero-pattern flex flex-row">
@@ -50,6 +50,6 @@ const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle }) => (
       </div>
     </div>
   </div>
-);
+)
 
-export default Layout;
+export default Layout

@@ -1,4 +1,4 @@
-const theme = require("./src/tailwind/theme");
+const theme = require('./src/tailwind/theme')
 
 module.exports = {
   purge: [],
@@ -10,4 +10,4 @@ module.exports = {
     extend: {},
   },
   plugins: [],
-};
+}

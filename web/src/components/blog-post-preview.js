@@ -1,13 +1,13 @@
-import * as styles from "./blog-post-preview.module.css";
+import * as styles from './blog-post-preview.module.css'
 // import { buildImageObj, cn, getBlogUrl } from "../lib/helpers";
-import { cn, getBlogUrl } from "../lib/helpers";
-import { Link } from "gatsby";
-import PortableText from "./portableText";
-import React from "react";
-import { format } from "date-fns";
+import { cn, getBlogUrl } from '../lib/helpers'
+import { Link } from 'gatsby'
+import PortableText from './portableText'
+import React from 'react'
+import { format } from 'date-fns'
 // import { imageUrlFor } from "../lib/image-url";
 
-import { responsiveTitle3 } from "./typography.module.css";
+import { responsiveTitle3 } from './typography.module.css'
 
 function BlogPostPreview(props) {
   return (
@@ -44,7 +44,7 @@ function BlogPostPreview(props) {
         </div> */}
       </div>
     </Link>
-  );
+  )
 }
 
-export default BlogPostPreview;
+export default BlogPostPreview

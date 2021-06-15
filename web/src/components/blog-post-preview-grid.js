@@ -1,7 +1,7 @@
-import * as styles from "./blog-post-preview-grid.module.css";
-import BlogPostPreview from "./blog-post-preview";
-import { Link } from "gatsby";
-import React from "react";
+import * as styles from './blog-post-preview-grid.module.css'
+import BlogPostPreview from './blog-post-preview'
+import { Link } from 'gatsby'
+import React from 'react'
 
 function BlogPostPreviewGrid(props) {
   return (
@@ -21,13 +21,13 @@ function BlogPostPreviewGrid(props) {
         </div>
       )}
     </div>
-  );
+  )
 }
 
 BlogPostPreviewGrid.defaultProps = {
-  title: "",
+  title: '',
   nodes: [],
-  browseMoreHref: "",
-};
+  browseMoreHref: '',
+}
 
-export default BlogPostPreviewGrid;
+export default BlogPostPreviewGrid

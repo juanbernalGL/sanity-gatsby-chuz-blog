@@ -1,9 +1,9 @@
 // import { Link } from "gatsby";
-import React from "react";
+import React from 'react'
 // import Icon from "./icon";
 // import { cn } from "../lib/helpers";
 
-import * as styles from "./header.module.css";
+import * as styles from './header.module.css'
 
 // const Header = ({ onHideNav, onShowNav, showNav, siteTitle }) => (
 const Header = () => (
@@ -29,6 +29,6 @@ const Header = () => (
       </nav>
     </div> */}
   </div>
-);
+)
 
-export default Header;
+export default Header
