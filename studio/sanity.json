@@ -1,7 +1,8 @@
 {
   "root": true,
   "project": {
-    "name": "Blog with Gatsby"
+    "name": "Blog with Gatsby",
+    "basePath": "/studio"
   },
   "api": {
     "projectId": "6nzrv68t",

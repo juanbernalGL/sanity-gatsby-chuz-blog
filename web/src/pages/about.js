@@ -1,73 +1,40 @@
-import React from 'react'
+// import React from 'react'
 // import { Link } from 'gatsby'
-// import Container from '../components/container'
-// import FilterButton from '../components/FilterButton'
+
+// const About = () => {
+//   return (
+//     <div>
+//       contact
+//       <Link to="/">Home</Link>
+//     </div>
+//   )
+// }
+
+// export default About
+
+import React from 'react'
+import { graphql } from 'gatsby'
+import BlockContent from '../components/block-content'
+import Container from '../components/container'
 import GraphQLErrorList from '../components/graphql-error-list'
+// import PeopleGrid from '../components/people-grid'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
-// import { graphql } from 'gatsby'
-import {
-  filterOutDocsPublishedInTheFuture,
-  filterOutDocsWithoutSlugs,
-  mapEdgesToNodes,
-} from '../lib/helpers'
+// import { mapEdgesToNodes, filterOutDocsWithoutSlugs } from '../lib/helpers'
 
-// export const query = graphql`
-//   fragment SanityImage on SanityMainImage {
-//     crop {
-//       _key
-//       _type
-//       top
-//       bottom
-//       left
-//       right
-//     }
-//     hotspot {
-//       _key
-//       _type
-//       x
-//       y
-//       height
-//       width
-//     }
-//     asset {
-//       _id
-//     }
-//   }
+import { responsiveTitle1 } from '../components/typography.module.css'
 
-//   query IndexPageQuery {
-//     site: sanitySiteSettings(_id: { regex: "/(drafts.|)siteSettings/" }) {
-//       title
-//       subtitle
-//       description
-//       keywords
-//     }
-//     posts: allSanityPost(
-//       limit: 6
-//       sort: { fields: [publishedAt], order: DESC }
-//       filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }
-//     ) {
-//       edges {
-//         node {
-//           id
-//           publishedAt
-//           mainImage {
-//             ...SanityImage
-//             alt
-//           }
-//           title
-//           subtitle
-//           _rawExcerpt
-//           slug {
-//             current
-//           }
-//         }
-//       }
-//     }
-//   }
-// `
+export const query = graphql`
+  query AboutPageQuery {
+    page: sanityPage(_id: { regex: "/(drafts.|)about/" }) {
+      id
+      title
+      _rawBody
+    }
+  }
+`
 
-const about = (props) => {
+const AboutPage = (props) => {
   const { data, errors } = props
 
   if (errors) {
@@ -78,27 +45,30 @@ const about = (props) => {
     )
   }
 
-  const site = (data || {}).site
-  const postNodes = (data || {}).posts
-    ? mapEdgesToNodes(data.posts)
-        .filter(filterOutDocsWithoutSlugs)
-        .filter(filterOutDocsPublishedInTheFuture)
-    : []
+  const page = data && data.page
+  // const personNodes =
+  //   data &&
+  //   data.people &&
+  //   mapEdgesToNodes(data.people).filter(filterOutDocsWithoutSlugs)
 
-//  <<<
+  if (!page) {
+    throw new Error(
+      'Missing "About" page data. Open the studio at http://localhost:3333 and add "About" page data and restart the development server.'
+    )
+  }
+
   return (
     <Layout>
-      <SEO
-        title={site.title}
-        description={site.description}
-        keywords={site.keywords}
-      />
-      {postNodes && <div>hola</div>}
-      {/* <Container> */}
-      <h1>about.....</h1>
-      {/* </Container> */}
+      <SEO title={page.title} />
+      <Container>
+        <h1 className={responsiveTitle1}>{page.title}</h1>
+        <BlockContent blocks={page._rawBody || []} />
+        {/* {personNodes && personNodes.length > 0 && (
+          <PeopleGrid items={personNodes} title="People" />
+        )} */}
+      </Container>
     </Layout>
   )
 }
 
-export default about
+export default AboutPage

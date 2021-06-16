@@ -2,6 +2,7 @@ import S from '@sanity/desk-tool/structure-builder'
 import { MdSettings } from 'react-icons/md'
 import { MdPerson, MdDescription, MdLocalOffer } from 'react-icons/md'
 import IframePreview from '../previews/IframePreview'
+import { FaFile } from 'react-icons/fa'
 
 // Web preview configuration
 const remoteURL = 'https://sanity-gatsby-chuz-blog.netlify.app'
@@ -99,6 +100,32 @@ export default () =>
         .title('Persons')
         .schemaType('post')
         .child(S.documentTypeList('post').title('Persons')),
+      S.listItem()
+        .title('Pages')
+        .child(
+          S.list()
+            .title('Pages')
+            .items([
+              S.listItem()
+                .title('About')
+                .child(
+                  S.editor()
+                    .id('aboutPage')
+                    .schemaType('page')
+                    .documentId('about')
+                )
+                .icon(FaFile),
+              S.listItem()
+                .title('Contact')
+                .child(
+                  S.editor()
+                    .id('contactPage')
+                    .schemaType('page')
+                    .documentId('contact')
+                )
+                .icon(FaFile),
+            ])
+        ),
       // `S.documentTypeListItems()` returns an array of all the document types
       // defined in schema.js. We filter out those that we have
       // defined the structure above.
