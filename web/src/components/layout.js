@@ -8,9 +8,14 @@ import Navbar from '../components/Navbar'
 import ZeroanimaLogo from '../assets/svg/Zeroanima_Logo_red.svg'
 import ZeroanimaLogoSecondary from '../assets/images/Zeroanima_Logo_white_small.png'
 import Designed from '../assets/svg/Designed.svg'
+import favicon from '../assets/images/favicon.ico'
+import Helmet from 'react-helmet'
 
 const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle }) => (
   <div className="min-h-screen min-w-min bg-white bg-hero-pattern flex flex-row">
+    <Helmet>
+      <link rel="icon" href={favicon} />
+    </Helmet>
     <Header
       siteTitle={siteTitle}
       onHideNav={onHideNav}
